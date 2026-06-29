@@ -1,83 +1,44 @@
 <html>
 <head>
 <title>質問票一覧</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-/*基準を1rem=10pxに設定*/
 html {
-    font-size: 192.5%;
+    font-size: 100%; /* ← 192.5% をやめる */
 }
 
-/*最小値:1.1rem → 可変（0.9rem + 1.925vw（画面幅320px:2px, 800px:5px, 1200px:7.5px））→ 最大値:1.6rem*/
-.font-size-S {
-    font-size: clamp(1.1rem, calc(0.9rem + 1.925vw), 1.6rem);
+body {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
 }
 
-/*最小値:1.2rem → 可変（1rem + 1.925vw（画面幅320px:2px, 800px:5px, 1200px:7.5px））→ 最大値:1.7rem*/
-.font-size-M {
-    font-size: clamp(1.2rem, calc(1rem + 1.925vw), 1.7rem);
-}
-
-/*最小値:1.6rem → 可変（2.2rem + 1.925vw（画面幅320px:2px, 800px:5px, 1200px:7.5px））→ 最大値:2.9rem*/
-.font-size-L {
-    font-size: clamp(2.4rem, calc(2.2rem + 1.925vw), 2.9rem);
+a {
+    font-size: 16px;
+    margin-right: 10px;
 }
 </style>
 </head>
+
 <body>
 <script>
-
 d = new Date();
 dd = "s" + (Math.random() + 1).toString(36).substring(10,11) + d.getTime() + (Math.random() + 1).toString(36).substring(7,9);
 
-var a = document.createElement('a');
-var linkText = document.createTextNode("質問1-3");
-a.appendChild(linkText);
-a.title = "Q1-3";
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSdUpAMIe_fQnMjEAZkSy8OsS7MOG7czZArklosZv82ywOpgBw/viewform?usp=pp_url&entry.1514824656=" + dd;
-a.target = "enq";
-document.body.appendChild(a);
+function createLink(text, url) {
+    var a = document.createElement('a');
+    a.appendChild(document.createTextNode(text));
+    a.href = url + dd;
+    a.target = "enq";
+    document.body.appendChild(a);
+}
 
-const txt2 = document.createTextNode("　");
-var a = document.createElement('a');
-var linkText = document.createTextNode("質問4-6");
-a.appendChild(linkText);
-a.title = "Q4-6";
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSfrROwHOp9yDSBNkp2c_7mNWkI5ionYmUnmQh32Nz4hQd3niQ/viewform?usp=pp_url&entry.1883689865=" + dd;
-a.target = "enq";
-document.body.appendChild(txt2);
-document.body.appendChild(a);
-
-const txt3 = document.createTextNode("　");  
-var a = document.createElement('a');
-var linkText = document.createTextNode("質問7-8");
-a.appendChild(linkText);
-a.title = "Q7-8";
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSf-fmTvFEEB20gqBNU11gqHsvDPvAArVsIdJyewi4_WzO8jDQ/viewform?usp=pp_url&entry.289230107=" + dd;
-a.target = "enq";
-document.body.appendChild(txt3);
-document.body.appendChild(a);
-
-const txt4 = document.createTextNode("　");  
-var a = document.createElement('a');
-var linkText = document.createTextNode("質問9-13");
-a.appendChild(linkText);
-a.title = "Q9-13";
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLScwztcxU-w2G1yZIATWNaGU1AcznSH-KmEmZqpgoqwFQ5HNUw/viewform?usp=pp_url&entry.43390173=" + dd;
-a.target = "enq";
-document.body.appendChild(txt4);
-document.body.appendChild(a);
-
-const txt5 = document.createTextNode("　");  
-var a = document.createElement('a');
-var linkText = document.createTextNode("質問14-24");
-a.appendChild(linkText);
-a.title = "Q14-24";
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSchN8_4z0qWxa6TykhS_h5vAg19MLJueoS89MSEFAZeYNNJiQ/viewform?usp=pp_url&entry.176738505=" + dd;
-a.target = "enq";
-document.body.appendChild(txt5);
-document.body.appendChild(a);
-
+createLink("質問1-3", "https://docs.google.com/forms/d/e/1FAIpQLSe5S0UocsFDQ-_eNqfro8qDPSppwihr2lDuTH75w_ng4zWhqQ/viewform?usp=pp_url&entry.464069704=");
+createLink("質問4-5", " https://docs.google.com/forms/d/e/1FAIpQLSdjYlt6xFlJxgh9VWsVz4IuzPgm4lBlCVr_LvsC9MYwxdW5gQ/viewform?usp=pp_url&entry.2052413839=");
+createLink("質問6-10", "https://docs.google.com/forms/d/e/1FAIpQLSfsOvwsOWLLPwL_XYMUA7gcFXRr4h-RemuTnLa63mIC7dh6yQ/viewform?usp=pp_url&entry.416840216=");
+createLink("質問11-19", "https://docs.google.com/forms/d/1U9aoH0mEb8LDif10HdYgawDMmlSlMr3QHYiT-Oyil1M/viewform?usp=pp_url&entry.1307750993=");
 </script>
 </body>
 </html>
